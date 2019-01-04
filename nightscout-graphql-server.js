@@ -11,16 +11,28 @@ if (!process.env.MDB_CONNECTION_STRING
 
 const app = express();
 const mdbc = process.env.MDB_CONNECTION_STRING;
-MongoClient.connect(mdbc, { useNewUrlParser: true }, (error, client) => {
-	if (error) {
-		console.log(error);
-		console.log('Or to paraphrase, something went wrong connecting to mongodb.');
-		process.exit(1);
+const client = new MongoClient(mdbc, { useNewUrlParser: true });
+client.connect((error) => {
+	if (error !== null) {
+		console.log("Connection error");
 	}
-	app.listen(4000, () => {
-		console.log('Express Server Now Running On localhost:4000');
+	console.log("Connected successfully to server");
+	const db = client.db('ddamico_nightscout_db');
+
+	findEntries(db, function (docs) {
+		console.log(docs);
 	});
 });
-
-// express server and gql endpoint
-
+const findEntryById = function (db, callback) {
+	// @TODO implementation
+};
+const findEntries = function(db, callback) {
+	const collection = db.collection('entries');
+	console.log('findEntries called', collection);
+	collection.find({}).toArray(function (error, docs) {
+		callback(docs);
+	});
+};
+const getLastTenEntries = function(db, callback) {
+	// @TODO implementation
+};
