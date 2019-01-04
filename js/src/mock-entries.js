@@ -1,0 +1,91 @@
+exports.mockEntries = [{
+	"_id": "5c204eb0b599af1a8634f5b1",
+	"sgv": 214,
+	"date": 1545621133000,
+	"dateString": "2018-12-24T03:12:13.000Z",
+	"trend": 4,
+	"direction": "Flat",
+	"device": "share2",
+	"type": "sgv"
+}, {
+	"_id": "5c204d84b599af1a8634f27f",
+	"sgv": 213,
+	"date": 1545620833000,
+	"dateString": "2018-12-24T03:07:13.000Z",
+	"trend": 4,
+	"direction": "Flat",
+	"device": "share2",
+	"type": "sgv"
+}, {
+	"_id": "5c204c58b599af1a8634ef51",
+	"sgv": 213,
+	"date": 1545620533000,
+	"dateString": "2018-12-24T03:02:13.000Z",
+	"trend": 4,
+	"direction": "Flat",
+	"device": "share2",
+	"type": "sgv"
+}, {
+	"_id": "5c204b2cb599af1a8634ec1b",
+	"sgv": 213,
+	"date": 1545620233000,
+	"dateString": "2018-12-24T02:57:13.000Z",
+	"trend": 4,
+	"direction": "Flat",
+	"device": "share2",
+	"type": "sgv"
+}, {
+	"_id": "5c204a00b599af1a8634e8dd",
+	"sgv": 212,
+	"date": 1545619933000,
+	"dateString": "2018-12-24T02:52:13.000Z",
+	"trend": 4,
+	"direction": "Flat",
+	"device": "share2",
+	"type": "sgv"
+}, {
+	"_id": "5c2048d4b599af1a8634e56c",
+	"sgv": 210,
+	"date": 1545619633000,
+	"dateString": "2018-12-24T02:47:13.000Z",
+	"trend": 4,
+	"direction": "Flat",
+	"device": "share2",
+	"type": "sgv"
+}, {
+	"_id": "5c2047a8b599af1a8634e197",
+	"sgv": 209,
+	"date": 1545619333000,
+	"dateString": "2018-12-24T02:42:13.000Z",
+	"trend": 3,
+	"direction": "FortyFiveUp",
+	"device": "share2",
+	"type": "sgv"
+}, {
+	"_id": "5c20467cb599af1a8634de65",
+	"sgv": 205,
+	"date": 1545619033000,
+	"dateString": "2018-12-24T02:37:13.000Z",
+	"trend": 3,
+	"direction": "FortyFiveUp",
+	"device": "share2",
+	"type": "sgv"
+}, {
+	"_id": "5c204550b599af1a8634db37",
+	"sgv": 199,
+	"date": 1545618733000,
+	"dateString": "2018-12-24T02:32:13.000Z",
+	"trend": 3,
+	"direction": "FortyFiveUp",
+	"device": "share2",
+	"type": "sgv"
+}, {
+	"_id": "5c204424b599af1a8634d805",
+	"sgv": 191,
+	"date": 1545618433000,
+	"dateString": "2018-12-24T02:27:13.000Z",
+	"trend": 3,
+	"direction": "FortyFiveUp",
+	"device": "share2",
+	"type": "sgv"
+}];
