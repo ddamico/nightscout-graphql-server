@@ -8,3 +8,8 @@ if (!process.env.MDB_CONNECTION_STRING
 }
 
 const mdbc = process.env.MDB_CONNECTION_STRING;
+
+
+// express server and gql endpoint
+const app = express();
+app.listen(4000, () => console.log('Express Server Now Running On localhost:4000'));
