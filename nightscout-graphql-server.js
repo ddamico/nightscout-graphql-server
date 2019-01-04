@@ -11,7 +11,7 @@ if (!process.env.MDB_CONNECTION_STRING
 
 const app = express();
 const mdbc = process.env.MDB_CONNECTION_STRING;
-MongoClient.connect(mdbc, (error, client) => {
+MongoClient.connect(mdbc, { useNewUrlParser: true }, (error, client) => {
 	if (error) {
 		console.log(error);
 		console.log('Or to paraphrase, something went wrong connecting to mongodb.');
