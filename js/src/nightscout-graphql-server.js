@@ -7,7 +7,6 @@ ObjectId.prototype.valueOf = function () {
 }
 const express_graphql = require('express-graphql');
 const { buildSchema } = require('graphql');
-const { mockEntries } = require('./mock-entries');// @TODO remove when no longer needed
 
 if (!process.env.MDB_CONNECTION_STRING
 	|| process.env.MDB_CONNECTION_STRING && process.env.MDB_CONNECTION_STRING === '') {
