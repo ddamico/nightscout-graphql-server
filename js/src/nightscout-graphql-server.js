@@ -14,6 +14,8 @@ if (!process.env.MDB_CONNECTION_STRING
 	process.exit(1);
 }
 
+const port = process.env.SERVER_PORT || 4000;
+
 const start = async () => {
 	try {
 		const mdbc = process.env.MDB_CONNECTION_STRING;
@@ -78,7 +80,7 @@ const start = async () => {
 			rootValue: resolvers,
 			graphiql: true
 		}));
-		app.listen(4000, () => console.log('Express GraphQL Server Now Running On localhost:4000/graphql'));
+		app.listen(port, () => console.log('Express GraphQL Server Now Running On localhost:' + port + '/graphql'));
 
 	} catch (error) {
 		console.log('Error connecting to data store');
