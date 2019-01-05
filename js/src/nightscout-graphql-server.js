@@ -24,7 +24,7 @@ const start = async () => {
 		const schema = buildSchema(`
 			type Query {
 				entry(id: ID!): Entry
-				entries: [Entry]
+				entries(lastN: Int): [Entry]
 			},
 			enum Direction {
 				NONE,
@@ -65,8 +65,14 @@ const start = async () => {
 					return null;
 				}
 			},
-			entries: async () => {
-				return await Entries.find().sort({_id:-1}).limit(10).toArray();
+			entries: async (args) => {
+				const limit = args.lastN || 10;
+				try {
+					return await Entries.find().sort({_id:-1}).limit(limit).toArray();
+				} catch (error) {
+					console.log('Error getting entries');
+					console.log(error);
+				}
 			}
 		};
 
