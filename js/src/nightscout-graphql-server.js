@@ -52,11 +52,7 @@ const start = async () => {
 			entry: async (args) => {
 				if (args.id) {
 					try {
-						const entry = await Entries.find({
-							"_id": ObjectId(args.id)
-						});
-						console.log(entry);
-						return entry;
+						return await Entries.findOne(ObjectId(args.id));
 					} catch (error) {
 						console.log('Error getting entry by id');
 						console.log(error);
