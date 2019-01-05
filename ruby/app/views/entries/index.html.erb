@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Entries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Sgv</th>
+      <th>Date</th>
+      <th>Datestring</th>
+      <th>Trend</th>
+      <th>Direction</th>
+      <th>Device</th>
+      <th>Type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entries.each do |entry| %>
+      <tr>
+        <td><%= entry._id %></td>
+        <td><%= entry.sgv %></td>
+        <td><%= entry.date %></td>
+        <td><%= entry.dateString %></td>
+        <td><%= entry.trend %></td>
+        <td><%= entry.direction %></td>
+        <td><%= entry.device %></td>
+        <td><%= entry.type %></td>
+        <td><%= link_to 'Show', entry %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

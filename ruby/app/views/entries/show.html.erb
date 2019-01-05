@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<%= debug @entry %>
+
+<p>
+  <strong>Id:</strong>
+  <%= @entry._id %>
+</p>
+
+<p>
+  <strong>Sgv:</strong>
+  <%= @entry.sgv %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @entry.date %>
+</p>
+
+<p>
+  <strong>Datestring:</strong>
+  <%= @entry.dateString %>
+</p>
+
+<p>
+  <strong>Trend:</strong>
+  <%= @entry.trend %>
+</p>
+
+<p>
+  <strong>Direction:</strong>
+  <%= @entry.direction %>
+</p>
+
+<p>
+  <strong>Device:</strong>
+  <%= @entry.device %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @entry.type %>
+</p>
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>

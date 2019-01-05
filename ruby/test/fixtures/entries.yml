@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  _id: MyText
+  sgv: 
+  date: MyText
+  dateString: MyText
+  trend: 
+  direction: MyText
+  device: MyText
+  type: MyText
+
+two:
+  _id: MyText
+  sgv: 
+  date: MyText
+  dateString: MyText
+  trend: 
+  direction: MyText
+  device: MyText
+  type: MyText
