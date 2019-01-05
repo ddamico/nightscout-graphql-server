@@ -1,13 +1,17 @@
 # Nightscout GraphQL Server
 
-Very basic toy project that intends to connect to a Nightscout data store, and then expose the store's entries with a graphql API. Not supported, not officially affiliated with the Nightscout project.
+Very basic toy project that intends to connect to a Nightscout data store, and then expose the store's entries with a graphql API. Not supported, not affiliated with the Nightscout project.
+
+## JS version
+Make sure to add a `.env` in `js/src/` containing the key `MDB_CONNECTION_STRING`. You can also add `SERVER_PORT` if you want to run on a specific port.
+
+No build or other tasks atm, this project is just for the sake of providing a sample gql endpoint for a different project.
+
+## Ruby version
+Nothing yet!
 
 ## TODO
-* mock up with
-* stand up connection to data store (use read-only user)
-* pull in gql
-* build endpoint
-    * build schema
-    * ???
-    * profit
-* reimplement on graphql-ruby, need to take a closer look at that
+* JS
+    * tests
+* RUBY
+    * reimplement on graphql-ruby, need to take a closer look at that anyhow so let's try it
