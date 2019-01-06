@@ -15,6 +15,10 @@ class EntriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_entry
+      # retrieving docs by id doesn't seem to work, probably some
+      # particularity of entry format, but haven't gotten it
+      # working yet
+      # @TODO get this working
       @entry = Entry.find(params[:id])
     end
 end
