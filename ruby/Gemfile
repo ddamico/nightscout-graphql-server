@@ -65,3 +65,4 @@ gem 'mongoid', '~> 6.0'
 gem 'bson_ext'
 gem 'graphql'
 gem 'graphiql-rails', group: :development
+gem 'pry-rails', group: :development
