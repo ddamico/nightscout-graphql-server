@@ -13,5 +13,4 @@ Nothing yet!
 ## TODO
 * JS
     * tests
-* RUBY
-    * reimplement on graphql-ruby, need to take a closer look at that anyhow so let's try it
+
