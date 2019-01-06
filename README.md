@@ -13,4 +13,7 @@ Nothing yet!
 ## TODO
 * JS
     * tests
-
+    * add a hard limit on number of entries to fetch at once, make this a single day's worth (5 * 60 * 24)
+    * consider some affordances on the endpoint for some calculated values, mean value, std deviation, etc
+    * prepare for integration with frontend
+    * redocument this work into a trello card on a new board to use on the day
