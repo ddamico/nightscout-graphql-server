@@ -26,7 +26,7 @@ const start = async () => {
 		const schema = buildSchema(`
 			type Query {
 				entry(id: ID!): Entry
-				entries(lastN: Int): [Entry]
+				entries(lastN: Int, startTimestamp: String, endTimestamp: String): [Entry]
 			},
 			enum Direction {
 				NONE,
@@ -63,14 +63,62 @@ const start = async () => {
 					return null;
 				}
 			},
-			entries: async (args) => {
-				const limit = args.lastN || 10;
-				try {
-					return await Entries.find().sort({_id:-1}).limit(limit).toArray();
-				} catch (error) {
-					console.log('Error getting entries');
-					console.log(error);
+			entries: async ({ lastN, startTimestamp, endTimestamp }) => {
+				const upperLimit = parseInt(process.env.MAX_ENTRIES) || 288;
+
+				if (lastN) {
+					// 288 here is (60/5) * 24, or a day's worth of entries
+					const limit = (lastN > upperLimit) ? upperLimit : limit;
+
+					try {
+						return await Entries.find().sort({_id:-1}).limit(limit).toArray();
+					} catch (error) {
+						console.log('Error getting entries');
+						console.log(error);
+					}
+				} else if (startTimestamp) {
+					// if we are passed a start date alone, return all entries
+					// since that date
+					const startTimestampInt = parseInt(startTimestamp);
+					if (!endTimestamp) {
+						try {
+							return await Entries.find({
+								date: {
+									$gte: startTimestampInt
+								}
+							}).sort({_id:-1}).limit(upperLimit).toArray();
+						} catch (error) {
+							console.log('Error getting entries');
+							console.log(error);
+						}
+					} else {
+						const endTimestampInt = parseInt(endTimestamp);
+						try {
+							return await Entries.find({
+								date: {
+									$gte: startTimestampInt,
+									$lte: endTimestampInt
+								}
+							}).sort({_id:-1}).limit(upperLimit).toArray();
+						} catch (error) {
+							console.log('Error getting entries');
+							console.log(error);
+						}
+					}
+
+					// if we are passed a start date and an end date, return
+					// entries in that range
+				} else {
+					// default to returning last 10 entries, this matches
+					// REST endpoint's behaviour
+					try {
+						return await Entries.find().sort({_id:-1}).limit(10).toArray();
+					} catch (error) {
+						console.log('Error getting entries');
+						console.log(error);
+					}
 				}
+
 			}
 		};
 
