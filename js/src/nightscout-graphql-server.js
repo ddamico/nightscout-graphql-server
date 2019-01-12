@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const dotenv = require('dotenv').config();
 const MongoClient = require('mongodb').MongoClient;
 const ObjectId = require('mongodb').ObjectID;
@@ -123,6 +124,7 @@ const start = async () => {
 		};
 
 		const app = express();
+		app.use(cors());
 		app.use('/graphql', express_graphql({
 			schema,
 			rootValue: resolvers,
