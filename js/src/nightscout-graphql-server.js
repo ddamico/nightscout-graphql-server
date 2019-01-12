@@ -69,7 +69,7 @@ const start = async () => {
 
 				if (lastN) {
 					// 288 here is (60/5) * 24, or a day's worth of entries
-					const limit = (lastN > upperLimit) ? upperLimit : limit;
+					const limit = (lastN > upperLimit) ? upperLimit : lastN;
 
 					try {
 						return await Entries.find().sort({_id:-1}).limit(limit).toArray();
