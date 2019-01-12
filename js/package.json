@@ -4,7 +4,7 @@
   "description": "Get nightscout entries using graphql! I mean, why not??",
   "main": "src/nightscout-graphql-server.js",
   "scripts": {
-    "serve": "node src/nightscout-graphql-server.js",
+    "start": "node src/nightscout-graphql-server.js",
     "debug": "node --inspect src/nightscout-graphql-server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
